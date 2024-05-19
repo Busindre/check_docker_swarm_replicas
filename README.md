@@ -1,10 +1,7 @@
 # check_docker_swarm_replicas
-Simple Nagios/Icinga plugin that checks that the number of configured and active replicas matches.
-Simple Nagios/Icinga plugin that checks that the number of configured and active replicas matches.
+Simple Nagios/Icinga plugin (shell script) that checks that the number of configured and active replicas matches. The script must be run on any manager node of the swarm cluster and the Icinga/Nagios user must be able to execute the command "docker service ls". If you need to use sudo for docker commands simply edit line 4.
 
-The script lists all the services with their corresponding replica status in their three states, OK/Warning/Critical.
-
-It warns by Warning / Critical when the number of replicas do not match. Critical when any service has 0 active replicas and Warning for any other service that has more than one active replica but does not match the configured ones. Example output
+The script lists all the services with their corresponding replica status in their three states, OK/Warning/Critical. It warns by Warning / Critical when the number of replicas do not match. Critical when any service has 0 active replicas and Warning for any other service that has more than one active replica but does not match the configured ones. Example output
 
 **OK**
 ```
